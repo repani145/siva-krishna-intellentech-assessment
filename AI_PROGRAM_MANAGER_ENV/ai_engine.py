@@ -137,7 +137,7 @@ class AI_AGENT:
                 Use plain ASCII apostrophe (') instead of smart quotes (’).
 
                 Your task:
-                Extract ACTION ITEMS, DECISIONS, RISKS, and OPEN QUESTIONS from the meeting transcript.
+                Extract ACTION ITEMS, DECISIONS, RISKS, OPEN QUESTIONS and a brief OVERALL SUMMARY from the meeting transcript.
 
                 Return ONLY valid JSON. No markdown. No explanation.
 
@@ -158,7 +158,7 @@ class AI_AGENT:
 
                 - owner_name = that speaker (with role)
                 - assignee = person who must perform task
-                    (may be same as owner OR another person mentioned)
+                (may be same as owner OR another person mentioned)
 
                 2) If no speaker commits:
 
@@ -183,9 +183,8 @@ class AI_AGENT:
                 - description (short task)
                 - priority: High / Medium / Low
                 - evidence: exact sentence with timestamp:
-                    "[HH:MM] Speaker: sentence"
+                "[HH:MM] Speaker: sentence"
                 - deadline_text: exact phrase used
-                    Examples: "Friday", "next Tuesday", "today", "end of week"
                 - deadline: always null
 
                 3. Do NOT calculate dates.
@@ -215,7 +214,7 @@ class AI_AGENT:
                 - evidence: exact quote with timestamp
                 - seviarity: High / Medium / Low if implied, else empty string
                 - context: detailed explanation of why this is a risk,
-                    including relevant people and related discussion
+                including relevant people and related discussion
 
                 3. Context must reference surrounding statements if relevant.
 
@@ -241,18 +240,31 @@ class AI_AGENT:
                 - to: recipient full name (no role)
                 - subject: short professional subject
                 - body: professional message including:
-                    - greeting
-                    - what is needed
-                    - expected timing if mentioned
-                    - sender name (owner)
+                - greeting
+                - what is needed
+                - expected timing if mentioned
+                - sender name (owner)
 
                 3. Emails must correspond to ACTION ITEMS.
+
+                ================ OVERALL SUMMARY RULES (MANDATORY) ================
+
+                1. Provide a concise overall meeting summary.
+                2. Mention main topics discussed, major outcomes, and general progress.
+                3. Do NOT list action items again.
+                4. The summary MAY synthesize and paraphrase transcript content.
+                5. The summary does NOT require direct evidence quotes.
+                6. Summarization is NOT considered invention if based only on transcript content.
+                7. Keep it short and professional (3–5 sentences).
+                8. overall_summary MUST be a NON-EMPTY string if transcript text is not empty.
+                9. If no actionable items exist, summarize discussion topics and status updates.
+                10. An empty overall_summary is INVALID output.
 
                 ================ GENERAL RULES ================
 
                 1. Use ONLY people from people directory.
-
                 2. Do NOT invent people, tasks, decisions, risks, questions, or emails.
+                3. Summarization is allowed and mandatory.
 
                 ================ PEOPLE DIRECTORY (USE THIS FOR ROLES & EMAILS) ================
 
@@ -262,12 +274,17 @@ class AI_AGENT:
 
                 {self.transcript_text}
 
+                ================ CRITICAL OUTPUT VALIDATION ================
+
+                - If transcript length > 0, overall_summary MUST NOT be empty.
+                - If unsure, generate a high-level neutral summary of discussion topics.
+
                 ================ OUTPUT FORMAT (MUST MATCH EXACTLY) ================
 
                 {{
                 "meeting_type": "{os.path.basename(self.transcript_file_path)}",
                 "action_items": [
-                    {{
+                {{
                     "assignee": "",
                     "description": "",
                     "owner_name": "",
@@ -275,38 +292,39 @@ class AI_AGENT:
                     "evidence": "",
                     "deadline_text": "",
                     "deadline": null
-                    }}
+                }}
                 ],
                 "decisions": [
-                    {{
+                {{
                     "decision": "",
                     "owner_name": "",
                     "evidence": ""
-                    }}
+                }}
                 ],
                 "risks": [
-                    {{
+                {{
                     "risk": "",
                     "evidence": "",
                     "seviarity": "",
                     "context": ""
-                    }}
+                }}
                 ],
                 "open_questions": [
-                    {{
+                {{
                     "question": "",
                     "evidence": "",
                     "context": ""
-                    }}
+                }}
                 ],
                 "follow_up_emails": [
-                    {{
+                {{
                     "email_id_to": "",
                     "to": "",
                     "subject": "",
                     "body": ""
-                    }}
-                ]
+                }}
+                ],
+                "overall_summary": ""
                 }}
 
                 Return ONLY JSON. No extra keys. No extra text.
@@ -339,6 +357,7 @@ class AI_AGENT:
             self.outputs["risks"] = extracted.get("risks", [])
             self.outputs["open_questions"] = extracted.get("open_questions", [])
             self.outputs["emails"] = extracted.get("follow_up_emails", [])
+            self.outputs['summary'] = extracted.get("overall_summary")
 
         except Exception as e:
             raise RuntimeError(f"Insight extraction failed: {e}")

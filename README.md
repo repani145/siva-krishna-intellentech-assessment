@@ -45,7 +45,7 @@ SMTP_PASSWORD=your_app_password
 -Enter into Environment folder
 -Add input files in this input_data folder and update the file names in main.py file
 -Now run main.py file from it's path (python main.py)
--To send follow up emails need to enable trigger_emails() in ai_engine.py file in line 425
+-To send follow up emails need to enable trigger_emails() in ai_engine.py file in line 444
 -Output is file will be generate and stored in outputs folder with file name MEETING_TYPE_YYYY_MM_DD.json
 
 ---------------- ASSUMPTIONS ------------------------

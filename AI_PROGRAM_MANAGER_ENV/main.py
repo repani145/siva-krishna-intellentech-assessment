@@ -36,6 +36,6 @@ if __name__ == "__main__":
         with open(output_file_path, "w", encoding="utf-8") as f:
             json.dump(final_result, f, ensure_ascii=False, indent=2)
 
-        # print(json.dumps(final_result, ensure_ascii=False, indent=2))
+        print(json.dumps(final_result, ensure_ascii=False, indent=2))
     except Exception as e:
         print(e)
