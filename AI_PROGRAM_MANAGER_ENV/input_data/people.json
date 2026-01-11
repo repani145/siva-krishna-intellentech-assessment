@@ -1,0 +1,13 @@
+{
+  "James Miller": {"email": "james.miller@example.com", "role": "Product Manager"},
+  "Emily Carter": {"email": "emily.carter@example.com", "role": "Product Designer"},
+  "Oliver Smith": {"email": "oliver.smith@example.com", "role": "Backend Engineer"},
+  "Daniel Brown": {"email": "daniel.brown@example.com", "role": "QA Engineer"},
+  "Sophia Wilson": {"email": "sophia.wilson@example.com", "role": "Site Reliability Engineer"},
+  "Charlotte Taylor": {"email": "charlotte.taylor@example.com", "role": "Legal Counsel"},
+  "Michael Johnson": {"email": "michael.johnson@example.com", "role": "Engineering Manager"},
+  "Emma Davis": {"email": "emma.davis@example.com", "role": "Data Analyst"},
+  "William Anderson": {"email": "william.anderson@example.com", "role": "Frontend Engineer"},
+  "Isabella Moore": {"email": "isabella.moore@example.com", "role": "Customer Support Lead"},
+  "Henry Thompson": {"email": "henry.thompson@example.com", "role": "Security Engineer"}
+}

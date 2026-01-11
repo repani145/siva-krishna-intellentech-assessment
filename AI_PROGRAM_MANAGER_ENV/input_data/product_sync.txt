@@ -1,0 +1,24 @@
+[00:00] Emily: Customer feedback strongly requests CSV export.
+[00:30] Isabella: Support sees this request weekly.
+[01:00] James: Let’s do a lightweight version first.
+[01:30] Oliver: Backend endpoint is required.
+[02:00] William: Frontend is trivial once API exists.
+[02:30] Michael: Do we need analytics?
+[02:50] Emma: Yes, we should track export usage.
+[03:15] James: Decision: ship CSV export behind a feature flag.
+[03:45] Emily: We need a rollout one-pager for support and sales.
+[04:10] James: Can someone own that by next Friday?
+[04:30] Emily: I can, but need confirmation from support.
+[05:00] Isabella: I’ll review messaging once draft is ready.
+[05:30] Daniel: Analytics events should be defined by end of week.
+[06:00] Emma: I can define events if backend fields are known.
+[06:30] Oliver: Endpoint will be done by the 15th.
+[07:00] Henry: Security review needed before enabling flag for all users.
+[07:30] Michael: Let’s not block release, but flag the risk.
+[08:00] James: Who owns security review?
+[08:20] Henry: I’ll do an initial pass next week.
+[08:50] William: Do we need export limits?
+[09:10] Sophia: Rate limiting might be needed.
+[09:40] James: Add as risk for now.
+[10:10] James: Demo planned in two weeks.
+[10:40] Emily: Okay, aligning timelines.

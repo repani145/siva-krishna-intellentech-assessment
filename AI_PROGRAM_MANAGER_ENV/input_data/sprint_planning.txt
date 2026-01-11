@@ -1,0 +1,25 @@
+[00:00] James: Sprint planning kickoff. Main goal is onboarding improvements.
+[00:45] Michael: This sprint is tight, so let's be realistic with scope.
+[01:10] Emily: Design-wise, the biggest gap is unclear copy on the signup screen.
+[01:45] William: Frontend changes are simple if copy is finalized early.
+[02:15] Emily: I can deliver first draft copy by Friday.
+[02:40] James: Okay, noted.
+[03:00] Oliver: Backend work includes mapping the new API response and feature flag.
+[03:35] Michael: How long for backend?
+[03:45] Oliver: I should finish by next Tuesday.
+[04:10] Daniel: Once backend is ready, I’ll add regression tests for signup.
+[04:35] Daniel: Might need mock updates from Oliver.
+[05:00] James: Decision: we will remove the legacy signup flow this sprint.
+[05:40] Sophia: That might increase load on the new endpoint.
+[06:05] Oliver: Yes, API rate limits could affect analytics events.
+[06:30] Emma: If analytics changes, I’ll need updated event definitions.
+[07:00] James: Who owns analytics updates?
+[07:20] Emma: I can define events, but need confirmation from product.
+[07:45] James: Okay, let’s tentatively assign Emma.
+[08:10] Emily: We also need legal approval for consent wording.
+[08:30] James: I’ll reach out to Charlotte today.
+[09:00] Isabella: Support will need a short FAQ before release.
+[09:20] James: Good point—who can draft that?
+[09:35] Emily: I can help, but only after copy is finalized.
+[10:10] Michael: Risk: too many dependencies might delay demo.
+[10:40] James: Target demo is next Wednesday. Let’s track risks closely.

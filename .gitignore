@@ -1,0 +1,13 @@
+# Environment variables
+.env
+
+# Virtual environment folders (inside project)
+AI_PROGRAM_MANAGER_ENV/Include/
+AI_PROGRAM_MANAGER_ENV/Lib/
+AI_PROGRAM_MANAGER_ENV/Scripts/
+AI_PROGRAM_MANAGER_ENV/pyvenv.cfg
+
+# Python cache
+AI_PROGRAM_MANAGER_ENV/__pycache__/
+__pycache__/
+*.pyc
