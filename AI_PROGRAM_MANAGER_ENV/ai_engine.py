@@ -19,7 +19,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 
 class AI_AGENT:
-    def __init__(self, transcript_file_path, people_file_path,client, model="llama-3.1-8b-instant"):
+    def __init__(self, transcript_file_path, people_file_path,client, model="meta-llama/llama-4-maverick-17b-128e-instruct"):
         self.transcript_file_path = transcript_file_path
         self.people_file_path = people_file_path
         self.llm_model = model

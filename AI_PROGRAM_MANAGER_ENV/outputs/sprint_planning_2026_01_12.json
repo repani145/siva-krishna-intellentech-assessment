@@ -3,7 +3,7 @@
   "action_items": [
     {
       "assignee": "Emily Carter (Product Designer)",
-      "description": "Deliver first draft copy by Friday",
+      "description": "Deliver first draft copy",
       "owner_name": "Emily Carter (Product Designer)",
       "priority": "Medium",
       "evidence": "[02:15] Emily: I can deliver first draft copy by Friday.",
@@ -11,7 +11,7 @@
     },
     {
       "assignee": "Oliver Smith (Backend Engineer)",
-      "description": "Finish backend work by next Tuesday",
+      "description": "Finish backend work",
       "owner_name": "Oliver Smith (Backend Engineer)",
       "priority": "Medium",
       "evidence": "[03:45] Oliver: I should finish by next Tuesday.",
@@ -27,10 +27,10 @@
     },
     {
       "assignee": "Emma Davis (Data Analyst)",
-      "description": "Define events for analytics updates",
-      "owner_name": "Emma Davis (Data Analyst)",
+      "description": "Define analytics events",
+      "owner_name": "James Miller (Product Manager)",
       "priority": "Medium",
-      "evidence": "[07:20] Emma: I can define events, but need confirmation from product.",
+      "evidence": "[07:45] James: Okay, let’s tentatively assign Emma.",
       "deadline": null
     },
     {
@@ -45,7 +45,7 @@
       "assignee": "Emily Carter (Product Designer)",
       "description": "Help draft FAQ for support",
       "owner_name": "Emily Carter (Product Designer)",
-      "priority": "Medium",
+      "priority": "Low",
       "evidence": "[09:35] Emily: I can help, but only after copy is finalized.",
       "deadline": null
     }
@@ -59,26 +59,61 @@
   ],
   "risks": [
     {
+      "risk": "Increased load on new endpoint",
+      "evidence": "[05:40] Sophia: That might increase load on the new endpoint.",
+      "seviarity": "Medium",
+      "context": "Removing legacy signup flow could increase load on the new endpoint, potentially affecting API rate limits and analytics events."
+    },
+    {
       "risk": "Too many dependencies might delay demo",
-      "evidence": "[10:40] Michael: Risk: too many dependencies might delay demo.",
+      "evidence": "[10:10] Michael: Risk: too many dependencies might delay demo.",
       "seviarity": "High",
-      "context": "Related to demo target next Wednesday and dependencies mentioned in discussion."
+      "context": "Multiple dependencies between tasks, such as frontend copy, backend API changes, and legal approval, could delay the demo next Wednesday."
     }
   ],
   "open_questions": [
     {
       "question": "Who owns analytics updates?",
       "evidence": "[07:00] James: Who owns analytics updates?",
-      "context": "Related to Emma’s need for confirmation from product."
+      "context": "Discussion around task ownership and dependencies, with Emma tentatively assigned to define analytics events."
+    },
+    {
+      "question": "Who can draft FAQ for support?",
+      "evidence": "[09:20] James: Good point—who can draft that?",
+      "context": "Emily agreed to help draft the FAQ after the copy is finalized."
     }
   ],
   "emails": [
     {
+      "email_id_to": "emily.carter@example.com",
+      "to": "Emily Carter",
+      "subject": "First Draft Copy by Friday",
+      "body": "Hi Emily, please deliver the first draft copy by Friday as discussed. Thanks, James Miller"
+    },
+    {
+      "email_id_to": "oliver.smith@example.com",
+      "to": "Oliver Smith",
+      "subject": "Backend Work Completion by Next Tuesday",
+      "body": "Hi Oliver, please ensure backend work is completed by next Tuesday as discussed. Thanks, James Miller"
+    },
+    {
+      "email_id_to": "daniel.brown@example.com",
+      "to": "Daniel Brown",
+      "subject": "Regression Tests for Signup",
+      "body": "Hi Daniel, please add regression tests for signup once backend is ready. Thanks, James Miller"
+    },
+    {
+      "email_id_to": "emma.davis@example.com",
+      "to": "Emma Davis",
+      "subject": "Define Analytics Events",
+      "body": "Hi Emma, please define analytics events as discussed. Thanks, James Miller"
+    },
+    {
       "email_id_to": "charlotte.taylor@example.com",
       "to": "Charlotte Taylor",
       "subject": "Legal Approval for Consent Wording",
-      "body": "Hi Charlotte, I need your approval for the consent wording by the end of the week. Please let me know if you have any questions or concerns. Best, James Miller"
+      "body": "Hi Charlotte, please provide legal approval for consent wording as discussed. Thanks, James Miller"
     }
   ],
-  "summary": "Sprint planning kickoff discussed main goal of onboarding improvements, scope realism, and dependencies. Decisions were made on removing legacy signup flow and assigning tasks. Risks were identified, including potential delays due to dependencies. Next steps include delivering copy, finishing backend work, and defining analytics events."
+  "summary": "The team discussed sprint planning for onboarding improvements, including design, backend, and testing tasks. Key decisions and action items were assigned, with risks identified around dependencies and potential delays."
 }
